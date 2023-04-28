@@ -4,15 +4,17 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 //components import
+import GalleryList from '../GalleryList/GalleryList';
+
+
 
 function App() {
   //const for app
   //const for galleryList for the whole list
   //const for galleryItem for each items
   const [galleryList, setGalleryList] = useState([]); 
-  const [galleryItem, setGalleryItem] = useState('');
+  const [galleryItem, setGalleryItem] = useState(false);
   
   // //on load, get galleryList
   useEffect(() => {
@@ -32,12 +34,10 @@ function App() {
     })
   }
 
-function galleryLists(){
 
 
-}
 function galleryItems(){
-  
+
 }
 
     return (
@@ -47,25 +47,10 @@ function galleryItems(){
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         {/* galleryList .map below, it should loop to show all gallery with a love it button for each components*/}
+          {GalleryList}
+          
+          
         
-        
-        <table>
-          <thead>
-            <tr>
-              <th>Gallery goes here</th>
-            </tr>
-          </thead>
-          <tbody>
-          {galleryList.map(gallery => (
-              <tr key={gallery.id}>
-                <td><img src={`${gallery.path}`}/></td>
-                <td>{gallery.description}</td>
-                <button>love it!</button>
-                <td>{gallery.likes} people love this!</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
         
       </div>
     );
