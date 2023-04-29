@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //components import
-import GalleryList from '../GalleryList/GalleryList';
+import GalleryList from '../GalleryList/GalleryList.js';
 
 
 
@@ -47,8 +47,11 @@ function galleryItems(){
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         {/* galleryList .map below, it should loop to show all gallery with a love it button for each components*/}
-          {GalleryList}
+          <GalleryList 
+          galleryList={galleryList} 
+          />
           
+
           
         
         
