@@ -1,5 +1,5 @@
 
-
+import GalleryItem from "../GalleryItem/GalleryItem";
 
 
 function GalleryList(props){
@@ -11,7 +11,8 @@ function GalleryList(props){
 
         {props.galleryList.map(gallery => (
             <div className = 'divImg' key={gallery.id}>
-            <img src={`${gallery.path}`}/>
+            <img src={`${gallery.path}`} onClick = {() => {GalleryItem(true)}}/>
+            
             <button>love it!</button>
             {gallery.likes} people love this!
             </div>

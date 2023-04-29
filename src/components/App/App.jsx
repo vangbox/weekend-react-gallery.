@@ -6,7 +6,7 @@ import axios from 'axios';
 
 //components import
 import GalleryList from '../GalleryList/GalleryList.js';
-
+import GalleryItem from '../GalleryItem/GalleryItem.js';
 
 
 function App() {
@@ -25,8 +25,10 @@ function App() {
   const getGalleries = () => {
     axios.get('/gallery')
     .then(response =>{
-      setGalleryList(response.data)
       // console.log('this is the response data from axios.GET', response.data); - got the object needed
+      setGalleryList(response.data)
+      setGalleryItem(response.data)
+      
     })
     .catch(err => {
       alert('error axios.GET!')
@@ -34,11 +36,9 @@ function App() {
     })
   }
 
+  
 
 
-function galleryItems(){
-
-}
 
     return (
 
@@ -51,10 +51,11 @@ function galleryItems(){
           galleryList={galleryList} 
           />
           
-
-          
-        
-        
+        {/* galleryItem next */}
+        <GalleryItem 
+        galleryItem={galleryItem}
+        />
+       
       </div>
     );
 }

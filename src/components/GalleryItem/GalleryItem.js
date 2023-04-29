@@ -1,9 +1,16 @@
 
 
 
-function GalleryItems(){
 
-    
+function GalleryItem(props, boolean){
+
+    if(boolean === true)
+
+    return(
+        <>
+        {props.GalleryItem.description}
+        </>    
+    );
 }
 
 
@@ -11,19 +18,4 @@ function GalleryItems(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export default GalleryItems;
+export default GalleryItem;
