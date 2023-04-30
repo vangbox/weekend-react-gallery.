@@ -6,7 +6,8 @@ import axios from 'axios';
 
 //components import
 import GalleryList from '../GalleryList/GalleryList.js';
-import GalleryItem from '../GalleryItem/GalleryItem.js';
+import GalleryItem from '../GalleryItem/GalleryItem';
+
 
 
 function App() {
@@ -33,17 +34,7 @@ function App() {
     })
   }
 
-  //GET TO THIS LATER
-  // const putGalleries = () => {
-  //   axios.put('/gallery')
-  //   .then(response =>{
-  //     setGalleryItem(response.data)
-  //   })
-  //   .catch(err => {
-  //     alert('error axios.PUT!')
-  //     console.log('error at axios.PUT!!');
-  //   })
-  // }
+
 
   
 
@@ -58,7 +49,8 @@ function App() {
 
         {/* galleryList .map below, it should loop to show all gallery with a love it button for each components*/}
           <GalleryList 
-          galleryList={galleryList} 
+            galleryList={galleryList} 
+            getGalleries={getGalleries}
           />
           
         

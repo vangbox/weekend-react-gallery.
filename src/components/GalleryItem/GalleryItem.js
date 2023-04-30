@@ -1,11 +1,6 @@
-
-
 import { useState } from 'react';
+import axios from 'axios';
 
-
-function loveButton(){
-            
-        }
 
 
 function GalleryItem(props){
@@ -14,10 +9,22 @@ function GalleryItem(props){
         
         const [boolean, setBoolean] = useState(false)
         const galleryItem = props.item;  
-        
-        
-    
+        // const putGalleries = props.putGalleries();
 
+       
+    //PUT Axios
+    const putLoveButton = (likeId) => {
+        axios.put(`/gallery/like/${likeId}`)
+        .then(response =>{
+            // console.log(props.response.likes);
+            props.getGalleries()
+        })
+        .catch(err => {
+        alert('error axios.PUT!')
+        console.log('error at axios.PUT!!');
+        })
+    }
+             
     if(boolean === false){
 
         return(
@@ -25,7 +32,7 @@ function GalleryItem(props){
         
             <div className = 'divImg' key={props.key}>
                 <img src={`${galleryItem.path}`} onClick = {() => {setBoolean(true)}}/>
-                <button>love it!</button>
+                <button onClick = {() => {putLoveButton(galleryItem.id)}}>love it!</button>
                 {galleryItem.likes} people love this!
             </div>
             
@@ -38,7 +45,7 @@ function GalleryItem(props){
                 <>
                 <div className = 'divDescription' key={props.key}>
                  <p>{`${galleryItem.description}`}</p>
-                 <button>love it!</button>
+                 <button onClick = {() => {putLoveButton(galleryItem.id)}}>love it!</button>
                  {galleryItem.likes} people love this!
                  </div>
                  </>

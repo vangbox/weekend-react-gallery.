@@ -16,7 +16,9 @@ function GalleryList(props){
                     <GalleryItem 
                         key={item.id}
                         item={item}
+                        getGalleries ={props.getGalleries}
                     />
+                    
                 )            
             })}
         </>
