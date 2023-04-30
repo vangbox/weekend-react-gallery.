@@ -1,6 +1,8 @@
+
+
 .App {
   text-align: center;
-}
+};
 
 .App-header {
   background-color: #222;
@@ -15,12 +17,53 @@
 
 img {
   
-    border: 1px black solid;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-    border-radius: 15px;
-    margin: 25px;
-    display: inline-block;
-  
+  border: 1px black solid;
+  height: 100px;
+  width: 100px;
+  border-radius: 15px;
+  margin: auto;
 }
+
+p{
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  background-color: aquamarine;
+  margin: 10px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.loveButton{
+  background-color: #5622f3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
+}
+
+.divImg{
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-around; 
+}
+
+.divImgParent {
+  width: 100px;
+  height: auto;
+  
+  margin: 1 em;
+  display: flex;
+}
+
+
+      

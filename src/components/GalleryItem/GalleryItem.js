@@ -25,7 +25,7 @@ function GalleryItem(props){
             <>
                 <div className = 'divImg' key={props.key}>
                     <img src={`${galleryItem.path}`} onClick = {() => {setBoolean(true)}}/>
-                    <button onClick = {() => {putLoveButton(galleryItem.id)}}>love it!</button>
+                    <button className ='loveButton' onClick = {() => {putLoveButton(galleryItem.id)}}>Love it!</button>
                     {galleryItem.likes} people love this!
                 </div>
             </> 
@@ -35,9 +35,9 @@ function GalleryItem(props){
         else{
             return(
                 <>
-                    <div className = 'divDescription' key={props.key}>
+                    <div className = 'divImg' key={props.key}>
                         <p>{`${galleryItem.description}`}</p>
-                        <button onClick = {() => {putLoveButton(galleryItem.id)}}>love it!</button>
+                        <button className ='loveButton' onClick = {() => {putLoveButton(galleryItem.id)}}>Love it!</button>
                         {galleryItem.likes} people love this!
                     </div>
                 </>

@@ -8,7 +8,7 @@ function GalleryList(props){
     return(
         <>
             <h2>Gallery goes here</h2>
-
+            <div className = 'divImgParent'>
             {props.galleryList.map(item => {
 
                 return (
@@ -19,6 +19,7 @@ function GalleryList(props){
                     />         
                 )            
             })}
+            </div>
         </>
     )  
 }
