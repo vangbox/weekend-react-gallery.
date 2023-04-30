@@ -14,7 +14,6 @@ function App() {
   //const for galleryList for the whole list
   //const for galleryItem for each items
   const [galleryList, setGalleryList] = useState([]); 
-  const [galleryItem, setGalleryItem] = useState(false);
   
   // //on load, get galleryList
   useEffect(() => {
@@ -27,14 +26,24 @@ function App() {
     .then(response =>{
       // console.log('this is the response data from axios.GET', response.data); - got the object needed
       setGalleryList(response.data)
-      setGalleryItem(response.data)
-      
     })
     .catch(err => {
       alert('error axios.GET!')
       console.log('error at axios.GET!!');
     })
   }
+
+  //GET TO THIS LATER
+  // const putGalleries = () => {
+  //   axios.put('/gallery')
+  //   .then(response =>{
+  //     setGalleryItem(response.data)
+  //   })
+  //   .catch(err => {
+  //     alert('error axios.PUT!')
+  //     console.log('error at axios.PUT!!');
+  //   })
+  // }
 
   
 
@@ -46,18 +55,21 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
+
         {/* galleryList .map below, it should loop to show all gallery with a love it button for each components*/}
           <GalleryList 
           galleryList={galleryList} 
           />
           
-        {/* galleryItem next */}
-        <GalleryItem 
-        galleryItem={galleryItem}
-        />
+        
        
       </div>
     );
 }
 
 export default App;
+
+//SO get your data onto a STATE OBJECT on App.jsx, 
+// pass that down to our LIST component, map out the data in list component, rendering a ITEM each time
+// pass the ITEM information into the rendered ITEM
+// Build the HTML for that Item within the ITEM component
