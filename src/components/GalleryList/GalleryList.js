@@ -6,7 +6,6 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 function GalleryList(props){
     
     return(
-    
         <>
             <h2>Gallery goes here</h2>
 
@@ -17,8 +16,7 @@ function GalleryList(props){
                         key={item.id}
                         item={item}
                         getGalleries ={props.getGalleries}
-                    />
-                    
+                    />         
                 )            
             })}
         </>

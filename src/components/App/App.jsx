@@ -6,14 +6,10 @@ import axios from 'axios';
 
 //components import
 import GalleryList from '../GalleryList/GalleryList.js';
-import GalleryItem from '../GalleryItem/GalleryItem';
-
-
 
 function App() {
   //const for app
   //const for galleryList for the whole list
-  //const for galleryItem for each items
   const [galleryList, setGalleryList] = useState([]); 
   
   // //on load, get galleryList
@@ -34,12 +30,6 @@ function App() {
     })
   }
 
-
-
-  
-
-
-
     return (
 
       <div className="App">
@@ -51,10 +41,7 @@ function App() {
           <GalleryList 
             galleryList={galleryList} 
             getGalleries={getGalleries}
-          />
-          
-        
-       
+          />    
       </div>
     );
 }
